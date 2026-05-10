@@ -518,3 +518,136 @@ button {
     padding: 22px;
   }
 }
+
+@media (orientation: landscape) and (hover: none) and (max-height: 520px) {
+  .app {
+    grid-template-rows: auto minmax(0, 1fr);
+    height: 100svh;
+    padding: 4px 8px max(4px, env(safe-area-inset-bottom));
+    gap: 4px;
+  }
+
+  .hud {
+    min-height: 34px;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .brand p {
+    font-size: 0.48rem;
+    line-height: 1;
+  }
+
+  .brand h1 {
+    max-width: 46vw;
+    font-size: 0.72rem;
+    line-height: 1.05;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .status {
+    width: 38vw;
+    min-width: 180px;
+    padding: 6px 8px;
+    border-radius: 8px;
+  }
+
+  .status-top {
+    font-size: 0.58rem;
+    line-height: 1;
+  }
+
+  .meter {
+    height: 5px;
+    margin-top: 5px;
+  }
+
+  .steps {
+    gap: 4px;
+    margin-top: 5px;
+  }
+
+  .steps span {
+    height: 3px;
+  }
+
+  .stage {
+    border-radius: 6px;
+  }
+
+  .dialogue {
+    left: 60px;
+    right: 60px;
+    bottom: max(6px, env(safe-area-inset-bottom));
+    max-height: 58px;
+    padding: 7px 10px;
+    border-radius: 7px;
+    overflow: hidden;
+    background: rgba(10, 16, 19, 0.72);
+  }
+
+  .dialogue p:first-child {
+    display: none;
+  }
+
+  .dialogue h2 {
+    margin: 0 0 2px;
+    font-size: 0.74rem;
+    line-height: 1.05;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .dialogue p {
+    display: -webkit-box;
+    font-size: 0.62rem;
+    line-height: 1.18;
+    overflow: hidden;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+  }
+
+  .mobile-controls {
+    bottom: max(8px, env(safe-area-inset-bottom));
+    align-items: center;
+    padding: 0 10px;
+    gap: 0;
+  }
+
+  .mobile-controls button {
+    width: 44px;
+    height: 44px;
+    background: rgba(10, 16, 19, 0.68);
+  }
+
+  .mobile-controls [data-control="action"] {
+    width: 62px;
+    height: 62px;
+  }
+
+  .mobile-controls button span {
+    font-size: 1.55rem;
+  }
+
+  .screen {
+    padding: 10px;
+  }
+
+  .screen-copy {
+    max-height: calc(100svh - 20px);
+    padding: 16px;
+    overflow: auto;
+  }
+
+  .screen-copy h2 {
+    font-size: clamp(1.4rem, 7vw, 2.5rem);
+  }
+
+  .screen-copy p {
+    font-size: 0.88rem;
+    line-height: 1.35;
+  }
+}
