@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Annem olmasaydı hayat nasıl olurdu? | annelergunu.site</title>
+    <meta
+      name="description"
+      content="Anneler Günü için küçük bir interaktif hikaye oyunu."
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app" id="app">
+      <header class="hud" aria-label="Oyun durumu">
+        <div class="brand">
+          <div>
+            <p>Yavuz'dan</p>
+            <h1>Annem olmasaydı hayat nasıl olurdu?</h1>
+          </div>
+        </div>
+
+        <div class="status">
+          <div class="status-top">
+            <span>Eksiklik hissi</span>
+            <strong id="chaosValue">0%</strong>
+          </div>
+          <div class="meter" aria-hidden="true">
+            <span id="chaosFill"></span>
+          </div>
+          <div class="steps" aria-label="Hikaye ilerlemesi">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+      </header>
+
+      <section class="stage" aria-label="Oyun alanı">
+        <canvas
+          id="game"
+          width="1280"
+          height="720"
+          tabindex="0"
+          aria-label="Evde geçen yan kaydırmalı hikaye oyunu"
+        ></canvas>
+        <div class="noise" aria-hidden="true"></div>
+
+        <aside class="mission-card" aria-label="Görevler">
+          <p>Görevler</p>
+          <ol id="taskList">
+            <li data-task="door">Kapıyı aç</li>
+            <li data-task="kitchen">Yemek yap</li>
+            <li data-task="laundry">Çamaşır yıka</li>
+            <li data-task="room">Odayı toparla</li>
+          </ol>
+        </aside>
+
+        <article class="dialogue" aria-live="polite">
+          <p id="dialogueKicker">Ev</p>
+          <h2 id="dialogueTitle">Eve geldim.</h2>
+          <p id="dialogueText">
+            Anahtar cebimde ama evin içindeki sessizlik kapının arkasında
+            bekliyor.
+          </p>
+        </article>
+      </section>
+
+      <nav class="mobile-controls" aria-label="Mobil kontroller">
+        <button type="button" data-control="left" aria-label="Sola git">
+          <span aria-hidden="true">←</span>
+        </button>
+        <button type="button" data-control="action" aria-label="Etkileşim">
+          <span aria-hidden="true">✦</span>
+        </button>
+        <button type="button" data-control="right" aria-label="Sağa git">
+          <span aria-hidden="true">→</span>
+        </button>
+      </nav>
+
+      <section class="screen" id="startScreen" aria-labelledby="startTitle">
+        <div class="screen-copy">
+          <p>Yavuz'dan Anneler Günü Hediyesi</p>
+          <h2 id="startTitle">Anne yoksa ev sadece duvar kalır.</h2>
+          <p>
+            Sağ ve sol ok tuşlarıyla evin içinde yürü. Space ile kapı, mutfak,
+            çamaşır makinesi ve oda ile etkileşime gir. Mobilde alttaki
+            tuşları kullan. Bu küçük oyunu anneme elimle yaptım.
+          </p>
+          <button type="button" id="startBtn">Oyuna başla</button>
+        </div>
+      </section>
+
+      <section
+        class="screen final-screen hidden"
+        id="finalScreen"
+        aria-labelledby="finalTitle"
+      >
+        <div class="screen-copy">
+          <p>Simülasyon bitti</p>
+          <h2 id="finalTitle">İyi ki varsın anne.</h2>
+          <p>
+            Kapıyı açan sesin, sıcak yemeğin, tertemiz kokan evin ve en çok da
+            varlığın... Meğer hayatımın düzeni senin sevginle kuruluyormuş.
+          </p>
+          <p class="signature">
+            Senin olmadığın bir dünya simülasyonunda bile dünyam karardı.
+          </p>
+          <button type="button" id="replayBtn">Bir daha oyna</button>
+        </div>
+      </section>
+    </main>
+
+    <script src="game.js"></script>
+  </body>
+</html>
